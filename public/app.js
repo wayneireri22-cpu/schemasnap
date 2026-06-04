@@ -35,7 +35,7 @@ function convert(jsonStr) {
     
     if (size > MAX_FREE_SIZE) {
       output.textContent = `// ⚠️ Input is ${(size / 1024).toFixed(1)}KB\n// Free tier supports up to 50KB\n// Upgrade to Pro for unlimited size.`;
-      output.className = 'output error-output';
+      output.className = 'output error';
       return;
     }
     
@@ -53,7 +53,7 @@ function convert(jsonStr) {
     
   } catch (e) {
     output.textContent = `// ❌ Error: ${e.message}`;
-    output.className = 'output error-output';
+    output.className = 'output error';
   }
 }
 
