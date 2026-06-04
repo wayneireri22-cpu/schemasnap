@@ -1,0 +1,10 @@
+{
+  "name": "schemasnap",
+  "version": "1.0.0",
+  "description": "JSON to TypeScript, Zod & JSON Schema converter",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  }
+}
