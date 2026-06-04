@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SchemaSnap — JSON to TypeScript, Zod & JSON Schema</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="logo">⚡ SchemaSnap</span>
+      <div class="nav-links">
+        <a href="#pro" class="btn-pro">Pro → $5/mo</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <header class="hero">
+      <h1>JSON to TypeScript, Zod & JSON Schema</h1>
+      <p class="subtitle">Paste any JSON. Get clean types in your format. All in-browser — nothing leaves your machine.</p>
+      
+      <div class="format-tabs">
+        <button class="tab active" data-format="typescript" onclick="switchFormat('typescript')">TypeScript</button>
+        <button class="tab" data-format="zod" onclick="switchFormat('zod')">Zod Schema</button>
+        <button class="tab" data-format="jsonschema" onclick="switchFormat('jsonschema')">JSON Schema</button>
+      </div>
+    </header>
+
+    <section class="editor">
+      <div class="panel input-panel">
+        <div class="panel-header">
+          <label for="json-input">JSON Input</label>
+          <span id="size-indicator" class="size-badge">0 KB</span>
+        </div>
+        <textarea id="json-input" placeholder='Paste your JSON here...&#10;&#10;Example:&#10;{"name": "Alice", "age": 30, "tags": ["admin", "user"]}' spellcheck="false"></textarea>
+        <div class="panel-actions">
+          <button onclick="formatJSON()" class="btn-sm" title="Format JSON">↻ Format</button>
+          <button onclick="loadSample()" class="btn-sm">📋 Load Sample</button>
+          <button onclick="clearInput()" class="btn-sm">✕ Clear</button>
+        </div>
+      </div>
+
+      <div class="panel output-panel">
+        <div class="panel-header">
+          <label id="output-label">TypeScript Interfaces</label>
+          <button onclick="copyOutput()" class="btn-sm">📋 Copy</button>
+        </div>
+        <div id="output-container">
+          <pre id="json-output" class="output"><code>// Your types will appear here
+// Just paste JSON on the left ↗</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="pro" class="pro-section">
+      <div class="pro-card">
+        <span class="pro-badge">PRO</span>
+        <h2>Need more power?</h2>
+        <ul class="pro-features">
+          <li>🧠 Unlimited JSON size & complexity</li>
+          <li>🔑 REST API access with your API key</li>
+          <li>📦 Batch conversion (convert multiple files)</li>
+          <li>🎨 Custom type name configuration</li>
+          <li>📤 Export as file download (.ts, .json)</li>
+          <li>⚡ Priority support via email</li>
+        </ul>
+        <div class="pro-pricing">
+          <span class="price">$5</span><span class="period">/month</span>
+          <span class="price-annual">$49<span class="period">/year (save 18%)</span></span>
+        </div>
+        <p class="pro-note">Coming soon — enter your email to get notified</p>
+        <form class="waitlist-form" onsubmit="joinWaitlist(event)">
+          <input type="email" id="waitlist-email" placeholder="your@email.com" required>
+          <button type="submit">Get Early Access</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>SchemaSnap — All conversion happens in your browser. Your data never touches a server.</p>
+      <p class="footer-links">Built with ❤️ by an indie developer</p>
+    </footer>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
